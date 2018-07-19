@@ -7,7 +7,8 @@ module Tolk
     module ClassMethods
 
       def import_secondary_locales
-        locales = Dir.entries(self.locales_config_path)
+        locales = Dir.entries('config/locales')
+        #locales = Dir.entries(self.locales_config_path)
 
         locale_block_filter = Proc.new {
           |l| ['.', '..'].include?(l) ||
